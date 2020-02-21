@@ -1,0 +1,18 @@
+https://dienstencheques.vlaanderen.be/onderneming/mijn-onderneming/werknemers/hoe-coderen
+Found 1 accessibility violations:
+
+
+Rule Violated:
+color-contrast - Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds
+	URL: https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
+	Impact Level: serious
+	Tags: cat.color wcag2aa wcag143
+	Elements Affected:
+	1) Target: .vl-functional-header__action:nth-child(1) > p > a
+		Element has insufficient color contrast of 4.08 (foreground color: #0055cc, background color: #c5ccd4, font size: 10.5pt, font weight: normal). Expected contrast ratio of 4.5:1
+	2) Target: .vl-functional-header__action:nth-child(2) > p > a[data-extranet=""]
+		Element has insufficient color contrast of 4.08 (foreground color: #0055cc, background color: #c5ccd4, font size: 10.5pt, font weight: normal). Expected contrast ratio of 4.5:1
+	3) Target: .vl-functional-header__action:nth-child(3) > p > a[data-extranet=""]
+		Element has insufficient color contrast of 4.08 (foreground color: #0055cc, background color: #c5ccd4, font size: 10.5pt, font weight: normal). Expected contrast ratio of 4.5:1
+
+
