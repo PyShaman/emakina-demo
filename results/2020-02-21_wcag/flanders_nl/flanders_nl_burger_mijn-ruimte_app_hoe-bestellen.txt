@@ -1,4 +1,4 @@
-https://dienstencheques.vlaanderen.be/burger/mijn-ruimte/app/hoe-bestellen
+https://www.servicevoucher-vl-nl.acc.sodexo.be/burger/mijn-ruimte/app/hoe-bestellen
 Found 2 accessibility violations:
 
 

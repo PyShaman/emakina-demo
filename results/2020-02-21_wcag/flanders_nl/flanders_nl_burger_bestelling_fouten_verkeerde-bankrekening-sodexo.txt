@@ -1,4 +1,4 @@
-https://dienstencheques.vlaanderen.be/burger/bestelling/fouten/verkeerde-bankrekening-sodexo
+https://www.servicevoucher-vl-nl.acc.sodexo.be/burger/bestelling/fouten/verkeerde-bankrekening-sodexo
 Found 1 accessibility violations:
 
 

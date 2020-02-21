@@ -1,4 +1,4 @@
-https://dienstencheques.vlaanderen.be/burger/mijn-ruimte/beveiligde-zone/gegevens
+https://www.servicevoucher-vl-nl.acc.sodexo.be/burger/mijn-ruimte/beveiligde-zone/gegevens
 Found 2 accessibility violations:
 
 

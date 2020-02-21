@@ -1,4 +1,4 @@
-https://dienstencheques.vlaanderen.be/burger/onderneming-huishoudhulp/huishoudhulp
+https://www.servicevoucher-vl-nl.acc.sodexo.be/burger/onderneming-huishoudhulp/huishoudhulp
 Found 1 accessibility violations:
 
 

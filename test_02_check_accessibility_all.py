@@ -27,7 +27,7 @@ class TestAccessibility:
         try:
             os.mkdir(f"results/{timestamp}_all")
             os.mkdir(f"results/{timestamp}_all/flanders_nl")
-            os.mkdir(f"results/{timestamp}_all/wallonie_fr")
+            os.mkdir(f"results/{timestamp}_all/brussels_fr")
         except OSError:
             print(f"Creation of the directory {timestamp} failed")
         else:
@@ -36,17 +36,17 @@ class TestAccessibility:
     @staticmethod
     def test_all_sites_flanders_nl(test_setup):
         ae = AxeEngine()
-        results = get_data_from_xml_sitemap("https://dienstencheques.vlaanderen.be")
+        results = get_data_from_xml_sitemap("https://www.servicevoucher-vl-nl.acc.sodexo.be")
         for result in results:
-            site_name = result[38:]
+            site_name = result[47:]
             driver.get(result)
             ae.inject_all_rules(driver, timestamp, "flanders_nl", f"flanders_nl_{site_name}.txt", result)
 
     @staticmethod
     def test_all_sites_wallonie_fr(test_setup):
         ae = AxeEngine()
-        results = get_data_from_xml_sitemap("https://titres-services.wallonie.be")
+        results = get_data_from_xml_sitemap("https://www.servicevoucher-bl-fr.acc.sodexo.be")
         for result in results:
-            site_name = result[36:]
+            site_name = result[47:]
             driver.get(result)
-            ae.inject_all_rules(driver, timestamp, "wallonie_fr", f"wallonie_fr_{site_name}.txt", result)
+            ae.inject_all_rules(driver, timestamp, "brussels_fr", f"brussels_fr{site_name}.txt", result)
