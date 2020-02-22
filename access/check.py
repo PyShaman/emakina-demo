@@ -14,6 +14,7 @@ class AxeEngine:
         f = open(f"results/{timestamp}_all/{culture}/" + file_name.replace("/", "_"), "w", encoding="utf-8")
         f.write(site + "\n")
         f.write(axe.report(results["violations"]))
+        f.close()
 
     @staticmethod
     def inject_only_wcag(driver, timestamp, culture, file_name, site):
@@ -30,3 +31,4 @@ class AxeEngine:
         f = open(f"results/{timestamp}_wcag/{culture}/" + file_name.replace("/", "_"), "w", encoding="utf-8")
         f.write(site + "\n")
         f.write(axe.report(results["violations"]))
+        f.close()

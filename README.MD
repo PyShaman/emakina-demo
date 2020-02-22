@@ -1,22 +1,53 @@
-Usage:
+# Emakina Demo with Accessibility and Security Testing
+_User guide_
 
-- Install Python 3.8+ (add Python to path - there will be checkbox during installation)
-- Clone this repository
-- Create new virtual environment: 
->python -m venv venv
-- Activate virtual environment: 
->./venv/Scripts/Activate.ps1 (on Windows)
 
-or 
->./venv/Scripts/activate (on MacOS or Linux)
-- In the repository directory run in command prompt: 
->pip install -r requirements.txt
-- To run test_01_check_accessibility_wcag_only.py or test_02_check_accessibility_all.py type in console: 
+**List of contents**
 
->pytest -v test_01_check_accessibility_wcag_only.py 
+**1. Python version and installation**
 
-or 
->pytest -v test_02_check_accessibility_all.py
+**2. Installing required packages and tools**
 
-- To run test_03_check_vulnerabilities.py type in console:
-> python -m unittest discover
+**3. Usage**
+
+
+_1. Python version and installation_
+
+Tests are written in Python 3.8+ and it should be ran on this version or higher.
+User can download newest version of Python at [Python download site](https://www.python.org/downloads/).
+
+Install [PIP](https://pypi.org/project/pip/).
+
+_2. Installing required packages and tools_
+
+After cloning [Emakina-demo](https://github.com/PyShaman/emakina-demo.git) repository locally user should enter 
+emakina-demo folder and create separate virtual environment for this project by using following command:
+```
+$ python -m venv venv
+```
+Python will create new directory called venv and install there basic packages. Next step is to activate virtual environment:
+```
+$ ./venv/Scripts/Activate.ps1
+```
+for Windows systems or
+```
+$ ./venv/Scripts/activate
+```
+for Linux.
+When virtual environment will be activated the user will see additional mark at console:
+```
+(venv) path\emakina-demo >
+```
+Next step is to install required packages using following command:
+```
+$ pip3 install -r requirements.txt
+```
+
+This will automatically download and install all necessary packages.
+
+_3. Usage:
+
+To run all tests use following command:
+```
+$ python runner.py
+```
