@@ -1,0 +1,116 @@
+https://www.servicevoucher-bl-fr.acc.sodexo.be/citoyen/information/deduction-fiscale/montant-deductible
+Found 5 accessibility violations:
+
+
+Rule Violated:
+color-contrast - Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds
+	URL: https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
+	Impact Level: serious
+	Tags: cat.color wcag2aa wcag143
+	Elements Affected:
+	1) Target: .br-functional-header__nav-item--left > .br-functional-header__label
+		Element has insufficient color contrast of 2.6 (foreground color: #979fc5, background color: #ffffff, font size: 7.5pt, font weight: bold). Expected contrast ratio of 4.5:1
+	2) Target: .br-functional-header__nav-item--right > .br-functional-header__label
+		Element has insufficient color contrast of 2.6 (foreground color: #979fc5, background color: #ffffff, font size: 7.5pt, font weight: bold). Expected contrast ratio of 4.5:1
+	3) Target: .br_personas-navigation__link--active
+		Element has insufficient color contrast of 4.01 (foreground color: #ffffff, background color: #6979ce, font size: 10.5pt, font weight: bold). Expected contrast ratio of 4.5:1
+	4) Target: .br_personas-navigation__link[data-personalink="Maternity"][href="/citoyen?persona=Maternity"]
+		Element has insufficient color contrast of 4.01 (foreground color: #ffffff, background color: #6979ce, font size: 10.5pt, font weight: bold). Expected contrast ratio of 4.5:1
+	5) Target: .br_personas-navigation__link[data-personalink="SingleParent"][href="/citoyen?persona=SingleParent"]
+		Element has insufficient color contrast of 4.01 (foreground color: #ffffff, background color: #6979ce, font size: 10.5pt, font weight: bold). Expected contrast ratio of 4.5:1
+	6) Target: .br_personas-navigation__link[data-personalink="Handicapped"][href="/citoyen?persona=Handicapped"]
+		Element has insufficient color contrast of 4.01 (foreground color: #ffffff, background color: #6979ce, font size: 10.5pt, font weight: bold). Expected contrast ratio of 4.5:1
+	7) Target: .br_personas-navigation__link[data-personalink="Elderly"][href="/citoyen?persona=Elderly"]
+		Element has insufficient color contrast of 4.01 (foreground color: #ffffff, background color: #6979ce, font size: 10.5pt, font weight: bold). Expected contrast ratio of 4.5:1
+	8) Target: a[data-level="\32 "]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 10.5pt, font weight: normal). Expected contrast ratio of 4.5:1
+	9) Target: a[href$="information"]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 10.5pt, font weight: normal). Expected contrast ratio of 4.5:1
+	10) Target: a[data-level="\34 "]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 10.5pt, font weight: normal). Expected contrast ratio of 4.5:1
+	11) Target: a[href$="nombre-a-declarer"]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 12.0pt, font weight: normal). Expected contrast ratio of 4.5:1
+	12) Target: p:nth-child(3) > a
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 12.0pt, font weight: normal). Expected contrast ratio of 4.5:1
+	13) Target: a[href$="comment-declarer"]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 12.0pt, font weight: normal). Expected contrast ratio of 4.5:1
+	14) Target: .vl-link[href="tel:02/401.31.60"]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 12.0pt, font weight: normal). Expected contrast ratio of 4.5:1
+	15) Target: .br_contact-section__item:nth-child(2) > .vl-link[href$="contact"]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 12.0pt, font weight: normal). Expected contrast ratio of 4.5:1
+	16) Target: .br_contact-section__item:nth-child(2) > .br_contact-section__item-desc
+		Element has insufficient color contrast of 2.92 (foreground color: #979797, background color: #ffffff, font size: 12.0pt, font weight: normal). Expected contrast ratio of 4.5:1
+	17) Target: a[href$="conditions-generales"]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 9.6pt, font weight: normal). Expected contrast ratio of 4.5:1
+	18) Target: a[href$="confidentialite"]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 9.6pt, font weight: normal). Expected contrast ratio of 4.5:1
+	19) Target: .br_footer__bottom-copy > a[href$="cookies"]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 9.6pt, font weight: normal). Expected contrast ratio of 4.5:1
+	20) Target: .vl-link[href$="cookies"]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 12.0pt, font weight: normal). Expected contrast ratio of 4.5:1
+
+
+
+
+
+Rule Violated:
+heading-order - Ensures the order of headings is semantically correct
+	URL: https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
+	Impact Level: moderate
+	Tags: cat.semantics best-practice
+	Elements Affected:
+	1) Target: .vl-col--6-12.vl-col--12-12--s:nth-child(1) > h6
+		Heading order invalid
+
+
+
+
+
+Rule Violated:
+label - Ensures every form element has a label
+	URL: https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI
+	Impact Level: critical
+	Tags: cat.forms wcag2a wcag332 wcag131 section508 section508.22.n
+	Elements Affected:
+	1) Target: #\31 VFO9MX
+		Form element has explicit <label> that is hidden
+
+
+
+
+
+Rule Violated:
+link-name - Ensures links have discernible text
+	URL: https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+	Impact Level: serious
+	Tags: cat.name-role-value wcag2a wcag412 wcag244 section508 section508.22.a
+	Elements Affected:
+	1) Target: .br_breadcrumbs__home-link
+		Element does not have text that is visible to screen readers
+		aria-label attribute does not exist or is empty
+		aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+		Element's default semantics were not overridden with role="presentation"
+		Element's default semantics were not overridden with role="none"
+		Element is in tab order and does not have accessible text
+	2) Target: a[href$="anysurfer.be/"]
+		Element does not have text that is visible to screen readers
+		aria-label attribute does not exist or is empty
+		aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+		Element's default semantics were not overridden with role="presentation"
+		Element's default semantics were not overridden with role="none"
+		Element is in tab order and does not have accessible text
+
+
+
+
+
+Rule Violated:
+region - Ensures all page content is contained by landmarks
+	URL: https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
+	Impact Level: moderate
+	Tags: cat.keyboard best-practice
+	Elements Affected:
+	1) Target: html
+		Some page content is not contained by landmarks
+
+

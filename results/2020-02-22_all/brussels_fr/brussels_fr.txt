@@ -1,0 +1,79 @@
+https://www.servicevoucher-bl-fr.acc.sodexo.be/
+Found 4 accessibility violations:
+
+
+Rule Violated:
+color-contrast - Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds
+	URL: https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
+	Impact Level: serious
+	Tags: cat.color wcag2aa wcag143
+	Elements Affected:
+	1) Target: .br-functional-header__nav-item--left > .br-functional-header__label
+		Element has insufficient color contrast of 2.6 (foreground color: #979fc5, background color: #ffffff, font size: 7.5pt, font weight: bold). Expected contrast ratio of 4.5:1
+	2) Target: .br-functional-header__nav-item--right > .br-functional-header__label
+		Element has insufficient color contrast of 2.6 (foreground color: #979fc5, background color: #ffffff, font size: 7.5pt, font weight: bold). Expected contrast ratio of 4.5:1
+	3) Target: a[data-level="\32 "]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 10.5pt, font weight: normal). Expected contrast ratio of 4.5:1
+	4) Target: a[href$="conditions-generales"]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 9.6pt, font weight: normal). Expected contrast ratio of 4.5:1
+	5) Target: a[href$="confidentialite"]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 9.6pt, font weight: normal). Expected contrast ratio of 4.5:1
+	6) Target: .br_footer__bottom-copy > a[href$="cookies"]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 9.6pt, font weight: normal). Expected contrast ratio of 4.5:1
+	7) Target: .vl-link[href$="cookies"]
+		Element has insufficient color contrast of 4.41 (foreground color: #217dc0, background color: #ffffff, font size: 12.0pt, font weight: normal). Expected contrast ratio of 4.5:1
+
+
+
+
+
+Rule Violated:
+heading-order - Ensures the order of headings is semantically correct
+	URL: https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
+	Impact Level: moderate
+	Tags: cat.semantics best-practice
+	Elements Affected:
+	1) Target: .index__col--left > h4
+		Heading order invalid
+	2) Target: .vl-col--6-12.vl-col--12-12--s:nth-child(1) > h6
+		Heading order invalid
+
+
+
+
+
+Rule Violated:
+link-name - Ensures links have discernible text
+	URL: https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+	Impact Level: serious
+	Tags: cat.name-role-value wcag2a wcag412 wcag244 section508 section508.22.a
+	Elements Affected:
+	1) Target: .br_breadcrumbs__home-link
+		Element does not have text that is visible to screen readers
+		aria-label attribute does not exist or is empty
+		aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+		Element's default semantics were not overridden with role="presentation"
+		Element's default semantics were not overridden with role="none"
+		Element is in tab order and does not have accessible text
+	2) Target: a[href$="anysurfer.be/"]
+		Element does not have text that is visible to screen readers
+		aria-label attribute does not exist or is empty
+		aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+		Element's default semantics were not overridden with role="presentation"
+		Element's default semantics were not overridden with role="none"
+		Element is in tab order and does not have accessible text
+
+
+
+
+
+Rule Violated:
+region - Ensures all page content is contained by landmarks
+	URL: https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
+	Impact Level: moderate
+	Tags: cat.keyboard best-practice
+	Elements Affected:
+	1) Target: html
+		Some page content is not contained by landmarks
+
+
