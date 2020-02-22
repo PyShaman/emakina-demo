@@ -45,7 +45,7 @@ $ pip3 install -r requirements.txt
 
 This will automatically download and install all necessary packages.
 
-_3. Usage:
+_3. Usage:_
 
 To run all tests use following command:
 ```
