@@ -34,7 +34,7 @@ class Zap:
             shell=True,
         )
         time.sleep(1)
-        print("ZAP process id: " + str(process.pid))
+        print(f"ZAP process id: {str(process.pid)}")
 
     def stop_zap(self):
         print("Shutdown ZAP")
@@ -48,64 +48,50 @@ class Zap:
         print("Starting passive scan")
         self.zap.pscan.set_enabled(enabled=True, apikey=self.apikey)
 
-    def run_spider(self, target):
-        print("Starting Scans on target: " + target)
-        spider_scan_id = self.spider.scan(
-            url=target,
-            maxchildren=None,
-            recurse=True,
-            contextname=None,
-            subtreeonly=None,
-        )
-        print("Scan ID: " + spider_scan_id)
+    def run_spider(self, target, timestamp, name):
+        print(f"Starting Scans on target: {target}")
+        spider_scan_id = self.spider.scan(url=target, maxchildren=None, recurse=True, contextname=None, subtreeonly=None)
+        print(f"Scan ID: {spider_scan_id}")
         # Give the Spider a chance to start
         time.sleep(2)
         while int(self.spider.status(spider_scan_id)) < 100:
-            print("Spider progress " + self.spider.status(spider_scan_id) + "%")
+            print(f"Spider progress {self.spider.status(spider_scan_id)}%")
             time.sleep(5)
         print("Spider scan completed")
-        time.sleep(5)
         print("Saving HTML report to file")
-        timestamp = str(datetime.now().isoformat()).replace(":", "-")[:-7]
-        my_file = open(f"ZAP_scan_{timestamp}.html", "w")
+        my_file = open(f"{name}_{timestamp}.html", "w")
         my_file.write(self.core.htmlreport(self.apikey))
         my_file.close()
 
-    def run_ajax_spider(self, target):
+    def run_ajax_spider(self, target, timestamp, name):
         # Ajax Spider the target URL
-        print("Start Ajax Spider -> " + self.ajax.scan(url=target, inscope=None))
+        print(f"Start Ajax Spider -> {self.ajax.scan(url=target, inscope=None)}")
         # Give the Ajax spider a chance to start
         time.sleep(10)
         while self.ajax.status != "stopped":
-            print("Ajax Spider is " + self.ajax.status)
+            print(f"Ajax Spider is {self.ajax.status}")
             time.sleep(5)
         for url in self.applicationURL:
             # Ajax Spider every url configured
-            print(
-                "Ajax Spider the URL: "
-                + url
-                + " -> "
-                + self.ajax.scan(url=url, inscope=None)
-            )
+            print(f"Ajax Spider the URL: {url} -> {self.ajax.scan(url=url, inscope=None)}")
             # Give the Ajax spider a chance to start
             time.sleep(10)
             while self.ajax.status != "stopped":
-                print("Ajax Spider is " + self.ajax.status)
+                print(f"Ajax Spider is {self.ajax.status}")
                 time.sleep(5)
         print("Ajax Spider scan completed")
         print("Saving HTML report to file")
-        timestamp = str(datetime.now().isoformat()).replace(":", "-")
         my_file_ajax_spider = open(f"ZAP_ajax_spider_{timestamp}.html", "w")
         my_file_ajax_spider.write(self.core.htmlreport(self.apikey))
         my_file_ajax_spider.close()
 
-    def run_active_scan(self, target):
+    def run_active_scan(self, target, timestamp, name):
         active_scan_id = self.zap.ascan.scan(
             url=target, recurse=True, inscopeonly=None, method=None, postdata=True
         )
-        print("Start Active scan. Scan ID: " + str(active_scan_id))
+        print(f"Start Active scan. Scan ID: {str(active_scan_id)}")
         while int(self.ascan.status(active_scan_id)) < 100:
-            print("Active Scan progress: " + self.ascan.status(active_scan_id) + "%")
+            print(f"Active Scan progress: {self.ascan.status(active_scan_id)}%")
             time.sleep(5)
         print("Active Scan completed")
         print("Saving HTML report to file")

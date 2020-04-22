@@ -11,24 +11,43 @@ class AxeEngine:
         axe = Axe(driver)
         axe.inject()
         results = axe.run()
-        f = open(f"results/{timestamp}_all/{culture}/" + file_name.replace("/", "_"), "w", encoding="utf-8")
-        f.write(site + "\n")
-        f.write(axe.report(results["violations"]))
-        f.close()
+        fi = f"results/{timestamp}_all/{culture}/" + file_name.replace("/", "_")
+        axe.write_results(results, fi)
+        # f = open(f"results/{timestamp}_all/{culture}/" + file_name.replace("/", "_"), "w", encoding="utf-8")
+        # f.write(site + "\n")
+        # f.write(axe.report())
+        # f.close()
 
     @staticmethod
-    def inject_only_wcag(driver, timestamp, culture, file_name, site):
+    def inject_only_wcag2a(driver, timestamp, culture, file_name, site):
         options = """
         {
         runOnly: {
             type: 'tag',
-            values: ['wcag2a', 'wcag2aa']
+            values: ['wcag2a']
             }
         }"""
         axe = Axe(driver)
         axe.inject()
         results = axe.run(context=None, options=options)
-        f = open(f"results/{timestamp}_wcag/{culture}/" + file_name.replace("/", "_"), "w", encoding="utf-8")
+        f = open(f"results/{timestamp}_wcag2a/{culture}/" + file_name.replace("/", "_"), "w", encoding="utf-8")
+        f.write(site + "\n")
+        f.write(axe.report(results["violations"]))
+        f.close()
+
+    @staticmethod
+    def inject_only_wcag2aa(driver, timestamp, culture, file_name, site):
+        options = """
+            {
+            runOnly: {
+                type: 'tag',
+                values: ['wcag2aa','wcag2a']
+                }
+            }"""
+        axe = Axe(driver)
+        axe.inject()
+        results = axe.run(context=None, options=options)
+        f = open(f"results/{timestamp}_wcag2aa/{culture}/" + file_name.replace("/", "_"), "w", encoding="utf-8")
         f.write(site + "\n")
         f.write(axe.report(results["violations"]))
         f.close()

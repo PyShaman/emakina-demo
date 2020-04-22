@@ -1,9 +1,9 @@
 from jira import JIRA
 from datetime import datetime
 
-user = 'bbbbbb'
-apikey = 'aaaaaa'
-server = 'https://emakina-jira-python-demo.atlassian.net/'
+user = "mib@emakina.com"
+apikey = "1D0a0rdqRq5xdAYg9oUH5EF8"
+server = "https://emakina-jira-python-demo.atlassian.net/"
 
 options = {
  'server': server
