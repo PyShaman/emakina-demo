@@ -3,9 +3,9 @@ import unittest
 import security.zap as security
 import os
 from datetime import datetime
-from jira import JIRA
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from data.jira_access import Jira
 
 timestamp = str(datetime.now().isoformat()).replace(":", "-")[:-7]
 
@@ -41,30 +41,19 @@ class TestVulnerabilities(unittest.TestCase):
     @staticmethod
     def test_01_flanders_nl_main_site_for_vulnerabilities():
         zap = security.Zap()
-        zap.run_spider("https://www.servicevoucher-vl-nl.acc.sodexo.be", timestamp, "flanders_nl_main_")
+        zap.run_spider("https://www.servicevoucher-vl-nl.acc.sodexo.be", timestamp, "flanders_nl_main")
 
     @staticmethod
     def test_02_brussels_fr_main_site_for_vulnerabilities():
         zap = security.Zap()
-        zap.run_spider("https://www.servicevoucher-bl-fr.acc.sodexo.be", timestamp, "brussels_fr_main_")
+        zap.run_spider("https://www.servicevoucher-bl-fr.acc.sodexo.be", timestamp, "brussels_fr_main")
 
     @staticmethod
     def test_03_send_report_to_jira():
-        user = "mib@emakina.com"
-        apikey = "1D0a0rdqRq5xdAYg9oUH5EF8"
-        server = "https://emakina-jira-python-demo.atlassian.net/"
-        options = {'server': server}
-        jira = JIRA(options, basic_auth=(user, apikey))
-        jira.project("EPJD")
-        jira.create_issue(project="EPJD",
-                          summary=f"Vulnerability testing {timestamp}",
-                          description="Vulnerability testing report",
-                          issuetype={"name": "Task"},
-                          assignee="mib@emakina.com")
-        issues_in_project = jira.search_issues('project=EPJD')
-        newest_issue = issues_in_project[0]
-        jira.add_attachment(issue=newest_issue, attachment=f"flanders_nl_main_{timestamp}.html")
-        jira.add_attachment(issue=newest_issue, attachment=f"brussels_fr_main_{timestamp}.html")
+        jira = Jira()
+        jira.create_issue("Vulnerability testing", "Vulnerability testing report", timestamp)
+        jira.add_attachment_to_ticket(f"flanders_nl_main_{timestamp}.html")
+        jira.add_attachment_to_ticket(f"brussels_fr_main_{timestamp}.html")
 
 
 if __name__ == "__main__":

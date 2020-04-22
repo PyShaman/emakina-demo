@@ -10,6 +10,8 @@ _User guide_
 
 **3. Usage**
 
+**4. Output**
+
 
 _1. Python version and installation_
 
@@ -51,3 +53,10 @@ To run all tests use following command:
 ```
 $ python runner.py
 ```
+
+_4. Output:_
+
+The tests will perform WCAG 2A, WCAG 2AA, full accessibility scan and finally vulnerability scan of the websites.
+Results of accessibility will be kept in results folder. After scanning the tests will zip a11y output files and post a ticket
+to JIRA instance with zip files as attachments. Vulnerability scan will create scan report in html form and will be attached 
+to newly created JIRA ticket automatically.

@@ -2,11 +2,11 @@ import datetime
 import unittest
 import os
 import shutil
-from jira import JIRA
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from access.check import AxeEngine
 from data.get_data_from_url import get_data_from_xml_sitemap
+from data.jira_access import Jira
 
 timestamp = str(datetime.datetime.now().isoformat()).replace(":", "-")[:10]
 
@@ -54,7 +54,7 @@ class TestAccessibilityAllRules(unittest.TestCase):
         for result in results:
             site_name = result[47:]
             driver.get(result)
-            ae.inject_all_rules(driver, timestamp, "brussels_fr", f"brussels_fr{site_name}.txt", result)
+            ae.inject_all_rules(driver, timestamp, "brussels_fr", f"brussels_fr_{site_name}.txt", result)
 
     @staticmethod
     def test_04_zip_results():
@@ -62,20 +62,9 @@ class TestAccessibilityAllRules(unittest.TestCase):
 
     @staticmethod
     def test_05_send_report_to_jira():
-        user = "mib@emakina.com"
-        apikey = "1D0a0rdqRq5xdAYg9oUH5EF8"
-        server = "https://emakina-jira-python-demo.atlassian.net/"
-        options = {'server': server}
-        jira = JIRA(options, basic_auth=(user, apikey))
-        jira.project("EPJD")
-        jira.create_issue(project="EPJD",
-                          summary=f"Accessibility testing {timestamp}",
-                          description="Accessibility testing report",
-                          issuetype={"name": "Task"},
-                          assignee="mib@emakina.com")
-        issues_in_project = jira.search_issues('project=EPJD')
-        newest_issue = issues_in_project[0]
-        jira.add_attachment(issue=newest_issue, attachment=f"a11y_{timestamp}.zip")
+        jira = Jira()
+        jira.create_issue("Accessibility testing all", "Accessibility testing report all", timestamp)
+        jira.add_attachment_to_ticket(f"a11y_{timestamp}.zip")
 
 
 if __name__ == "__main__":
