@@ -1,7 +1,7 @@
 from jira import JIRA
 
 
-class Jira():
+class Jira:
 
     def __init__(self):
         self.user = "your@email.com"
